@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Closed Account - Operational Clearance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c7c4d7",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e1ec",
+                        "on-surface": "#1b1b23",
+                        "tertiary-container": "#53701c",
+                        "surface-container": "#efecf8",
+                        "secondary-fixed": "#aaedff",
+                        "primary-fixed": "#e1dfff",
+                        "on-primary-fixed": "#09006b",
+                        "surface-dim": "#dbd8e4",
+                        "primary-container": "#5555db",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fcf8ff",
+                        "outline": "#777586",
+                        "primary-fixed-dim": "#c1c1ff",
+                        "on-secondary-fixed": "#001f26",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#322fb9",
+                        "on-primary-container": "#e6e4ff",
+                        "tertiary-fixed": "#ccef8c",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fcf8ff",
+                        "surface-container-low": "#f5f2fe",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006879",
+                        "on-tertiary-container": "#cff38f",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-surface-variant": "#464554",
+                        "inverse-primary": "#c1c1ff",
+                        "primary": "#3b39c2",
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "surface-container-high": "#eae6f2",
+                        "surface-tint": "#4c4bd2",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b23",
+                        "tertiary": "#3c5701",
+                        "on-tertiary-fixed": "#131f00",
+                        "surface-variant": "#e4e1ec",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#303038",
+                        "on-secondary-container": "#006576",
+                        "inverse-on-surface": "#f2effb",
+                        "secondary-fixed-dim": "#64d5ef",
+                        "tertiary-fixed-dim": "#b0d272",
+                        "secondary-container": "#74e3fe",
+                        "surface-bright": "#fcf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack_lg": "24px",
+                        "stack_md": "16px",
+                        "stack_sm": "8px",
+                        "sidebar_width": "260px",
+                        "container_padding": "32px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #F4F4F6;
+        }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body class="text-on-background antialiased flex h-screen overflow-hidden bg-white">
+    <!-- SideNavBar -->
+    <nav
+        class="w-[260px] h-screen fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col py-stack_lg px-gutter z-20">
+        <div class="mb-stack_lg flex items-center gap-3 px-3">
+            <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+            </div>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap">Closed Account</h1>
+        </div>
+        <nav class="flex flex-col gap-2 mt-6">
+            <!-- Inactive Tab: Dashboard -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-title-sm text-title-sm">Dashboard</span>
+            </a>
+            <!-- Inactive Tab: New Request -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined">add_circle</span>
+                <span class="font-title-sm text-title-sm">New Request</span>
+            </a>
+            <!-- Active Tab: Tasks -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 text-primary font-bold bg-primary-container/10"
+                href="#">
+                <span class="material-symbols-outlined">assignment</span>
+                <span class="font-title-sm text-title-sm">Tasks</span>
+            </a>
+            <!-- Inactive Tab: Tracking -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-on-surface-variant font-medium hover:bg-surface-container-high active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                <span class="font-title-sm text-title-sm">Tracking</span>
+            </a>
+        </nav>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="ml-[260px] flex-1 flex flex-col h-full relative z-0 bg-white">
+        <!-- TopNavBar -->
+        <header
+            class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+            <div class="flex items-center gap-4"><a href="#"
+                    class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:text-primary">arrow_back</span>
+                    <span class="font-body-md text-body-md font-medium group-hover:text-primary">Back to
+                        Dashboard</span>
+                </a>
+                <div class="text-right flex flex-col justify-center">
+                    <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+                </div>
+                <div
+                    class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+                    <span class="material-symbols-outlined text-outline">person</span>
+                </div>
+            </div>
+        </header>
+        <!-- Page Canvas -->
+        <div class="mt-16 p-container_padding flex-1 overflow-y-auto">
+            <div class="mb-stack_lg">
+                <h1 class="font-headline-md text-headline-md text-on-surface">Operational Clearance</h1>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2">Review account details and verify
+                    operational checkpoints before finalizing closure.</p>
+            </div>
+            <!-- Two Column Layout -->
+            <div class="grid grid-cols-12 gap-gutter">
+                <!-- Left Column: Account Summary -->
+                <div class="col-span-12 lg:col-span-7 flex flex-col gap-stack_lg">
+                    <div
+                        class="bg-surface-container-lowest rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-surface-container-high">
+                        <h2
+                            class="font-title-sm text-title-sm text-on-surface mb-stack_md flex items-center gap-2 border-b border-surface-variant pb-2">
+                            <span class="material-symbols-outlined text-primary">person</span>
+                            Account Holder Details
+                        </h2>
+                        <div class="grid grid-cols-2 gap-stack_md">
+                            <div>
+                                <div class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Name
+                                </div>
+                                <div class="font-body-lg text-body-lg text-on-surface font-semibold">Eleanor Vance</div>
+                            </div>
+                            <div>
+                                <div class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">
+                                    Account ID</div>
+                                <div class="font-body-lg text-body-lg text-on-surface">ACC-8842-991A</div>
+                            </div>
+                            <div>
+                                <div class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">
+                                    Closure Reason</div>
+                                <div class="font-body-md text-body-md text-on-surface">Consolidation</div>
+                            </div>
+                            <div>
+                                <div class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">
+                                    Initiated Date</div>
+                                <div class="font-body-md text-body-md text-on-surface">Oct 24, 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-surface-container-high">
+                        <h2
+                            class="font-title-sm text-title-sm text-on-surface mb-stack_md flex items-center gap-2 border-b border-surface-variant pb-2">
+                            <span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+                            Financial Status
+                        </h2>
+                        <div class="flex items-center justify-between mb-stack_md">
+                            <span class="font-body-md text-body-md text-on-surface-variant">Final Balance</span>
+                            <span class="font-headline-md text-headline-md text-on-surface font-bold">$0.00</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between py-2 border-b border-surface-variant">
+                                <span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary-container text-[20px]">check_circle</span>
+                                    Pending Transactions Cleared
+                                </span>
+                                <span
+                                    class="font-label-caps text-label-caps bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded">VERIFIED</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-surface-variant">
+                                <span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary-container text-[20px]">check_circle</span>
+                                    Overdraft Fees Settled
+                                </span>
+                                <span
+                                    class="font-label-caps text-label-caps bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded">VERIFIED</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-surface-container-high flex flex-col">
+                        <div class="flex justify-between items-center mb-stack_md border-b border-surface-variant pb-2">
+                            <h3 class="font-title-sm text-title-sm text-on-surface">Uploaded Documents</h3>
+                            <span
+                                class="bg-surface-container-highest text-on-surface px-2 py-1 rounded font-label-caps text-label-caps">3
+                                Items</span>
+                        </div>
+                        <div class="flex flex-col gap-stack_sm">
+                            <!-- Document Item 1 -->
+                            <div
+                                class="group flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer bg-white">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-error-container/20 text-error rounded flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-body-md text-body-md font-semibold text-on-surface">Government
+                                            ID.pdf</h4>
+                                        <p class="font-label-caps text-[10px] text-on-surface-variant">Uploaded 2 hrs
+                                            ago • 1.2 MB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded font-label-caps text-label-caps flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                                    </span>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container transition-colors">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Document Item 2 -->
+                            <div
+                                class="group flex items-center justify-between p-3 border border-primary rounded-lg bg-primary-container/5 transition-colors cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-error-container/20 text-error rounded flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-body-md text-body-md font-semibold text-on-surface">
+                                            Closure_Request_Signed.pdf</h4>
+                                        <p class="font-label-caps text-[10px] text-on-surface-variant">Uploaded 2 hrs
+                                            ago • 2.4 MB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded font-label-caps text-label-caps flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">pending</span> Pending
+                                    </span>
+                                    <button
+                                        class="p-2 text-primary hover:bg-surface-container transition-colors rounded">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Document Item 3 -->
+                            <div
+                                class="group flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer bg-white">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-primary-container/10 text-primary rounded flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined">image</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-body-md text-body-md font-semibold text-on-surface">
+                                            Proof_of_Address.jpg</h4>
+                                        <p class="font-label-caps text-[10px] text-on-surface-variant">Uploaded 3 hrs
+                                            ago • 850 KB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded font-label-caps text-label-caps flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                                    </span>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container transition-colors">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Action Card -->
+                <div class="col-span-12 lg:col-span-5 flex flex-col gap-stack_lg">
+                    <div
+                        class="bg-surface-container-lowest rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-surface-container-high">
+                        <div class="flex items-center gap-2 mb-stack_md border-b border-surface-variant pb-2">
+                            <span class="material-symbols-outlined text-primary">fact_check</span>
+                            <h3 class="font-title-sm text-title-sm text-on-surface">Verification Checklist</h3>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <div class="flex items-center h-6">
+                                    <input checked=""
+                                        class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                                        type="checkbox">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Document
+                                        Completeness Verified</span>
+                                    <span class="font-label-caps text-[10px] text-on-surface-variant">All required pages
+                                        are present and legible.</span>
+                                </div>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <div class="flex items-center h-6">
+                                    <input
+                                        class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                                        type="checkbox">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Signatures
+                                        Checked</span>
+                                    <span class="font-label-caps text-[10px] text-on-surface-variant">Authorized
+                                        signatures match records.</span>
+                                </div>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <div class="flex items-center h-6">
+                                    <input checked=""
+                                        class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                                        type="checkbox">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">ID
+                                        Consistency Verified</span>
+                                    <span class="font-label-caps text-[10px] text-on-surface-variant">Names and details
+                                        match the account profile.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-surface-container-high overflow-hidden flex flex-col h-full">
+                        <div class="p-stack_lg bg-surface border-b border-surface-variant">
+                            <h2 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">gavel</span>
+                                Clearance Checklist
+                            </h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-1">Complete mandatory
+                                verifications to enable final decision.</p>
+                        </div>
+                        <div class="p-stack_lg flex-1 flex flex-col gap-stack_md">
+                            <!-- Toggles -->
+                            <div class="space-y-4 mb-stack_lg">
+                                <label
+                                    class="flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:bg-surface-container-lowest cursor-pointer transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+                                            <span class="material-symbols-outlined text-[18px]">percent</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-body-md text-body-md text-on-surface font-semibold">Post
+                                                Interest Verified</div>
+                                            <div class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">
+                                                Check complete</div>
+                                        </div>
+                                    </div>
+                                    <div class="relative inline-flex items-center cursor-pointer">
+                                        <input class="sr-only peer" id="toggle-interest" onchange="checkToggles()"
+                                            type="checkbox">
+                                        <div
+                                            class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:bg-surface-container-lowest cursor-pointer transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+                                            <span class="material-symbols-outlined text-[18px]">sync</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-body-md text-body-md text-on-surface font-semibold">CII
+                                                System Data Synced</div>
+                                            <div class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">
+                                                Database aligned</div>
+                                        </div>
+                                    </div>
+                                    <div class="relative inline-flex items-center cursor-pointer">
+                                        <input class="sr-only peer" id="toggle-cii" onchange="checkToggles()"
+                                            type="checkbox">
+                                        <div
+                                            class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Decision Panel -->
+                            <div class="border-t border-surface-variant pt-stack_md mt-auto">
+                                <div class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">
+                                    Final Decision</div>
+                                <div class="flex gap-stack_md mb-stack_lg opacity-50 pointer-events-none transition-opacity duration-300"
+                                    id="decision-panel">
+                                    <label
+                                        class="flex-1 border border-outline-variant rounded p-3 flex items-center gap-2 cursor-pointer hover:bg-tertiary-container/5 hover:border-tertiary-container transition-colors group">
+                                        <input
+                                            class="text-tertiary-container focus:ring-tertiary-container border-outline-variant"
+                                            name="decision" type="radio" value="approve">
+                                        <span
+                                            class="font-body-md text-body-md text-on-surface group-hover:text-tertiary-container font-semibold">Approve</span>
+                                    </label>
+                                    <label
+                                        class="flex-1 border border-outline-variant rounded p-3 flex items-center gap-2 cursor-pointer hover:bg-error-container/20 hover:border-error transition-colors group">
+                                        <input class="text-error focus:ring-error border-outline-variant"
+                                            name="decision" type="radio" value="reject">
+                                        <span
+                                            class="font-body-md text-body-md text-on-surface group-hover:text-error font-semibold">Reject</span>
+                                    </label>
+                                </div>
+                                <button
+                                    class="w-full bg-surface-variant text-on-surface-variant font-body-md text-body-md py-3 rounded font-semibold transition-colors duration-300 cursor-not-allowed"
+                                    disabled="" id="submit-btn">
+                                    Submit Decision
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function checkToggles() {
+            const interest = document.getElementById('toggle-interest').checked;
+            const cii = document.getElementById('toggle-cii').checked;
+            const panel = document.getElementById('decision-panel');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (interest && cii) {
+                panel.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                panel.classList.add('opacity-50', 'pointer-events-none');
+
+                // Reset radios if toggles are unchecked
+                const radios = document.getElementsByName('decision');
+                radios.forEach(r => r.checked = false);
+                checkSubmit();
+            }
+        }
+
+        // Add event listeners to radios to enable submit button
+        const radios = document.getElementsByName('decision');
+        radios.forEach(radio => {
+            radio.addEventListener('change', checkSubmit);
+        });
+
+        function checkSubmit() {
+            const submitBtn = document.getElementById('submit-btn');
+            const anyChecked = Array.from(document.getElementsByName('decision')).some(r => r.checked);
+
+            if (anyChecked) {
+                submitBtn.classList.remove('bg-surface-variant', 'text-on-surface-variant', 'cursor-not-allowed');
+                submitBtn.classList.add('bg-primary', 'text-on-primary', 'cursor-pointer', 'hover:bg-primary-container');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.add('bg-surface-variant', 'text-on-surface-variant', 'cursor-not-allowed');
+                submitBtn.classList.remove('bg-primary', 'text-on-primary', 'cursor-pointer', 'hover:bg-primary-container');
+                submitBtn.disabled = true;
+            }
+        }
+    </script>
+    <script src="../scripts/auto-routing.js"></script>
+</body>
+
+</html>

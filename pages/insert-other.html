@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Other Asset Entry - Closed Account</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ccef8c",
+            "surface-container-high": "#eae6f2",
+            "surface-variant": "#e4e1ec",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001f26",
+            "primary-container": "#5555db",
+            "on-secondary": "#ffffff",
+            "on-background": "#1b1b23",
+            "inverse-surface": "#303038",
+            "secondary-fixed": "#aaedff",
+            "on-error": "#ffffff",
+            "outline": "#777586",
+            "on-primary-fixed-variant": "#322fb9",
+            "on-secondary-container": "#006576",
+            "inverse-on-surface": "#f2effb",
+            "tertiary": "#3c5701",
+            "surface-container-low": "#f5f2fe",
+            "primary": "#3b39c2",
+            "on-primary-fixed": "#09006b",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004e5c",
+            "secondary-fixed-dim": "#64d5ef",
+            "surface-bright": "#fcf8ff",
+            "inverse-primary": "#c1c1ff",
+            "tertiary-fixed-dim": "#b0d272",
+            "on-surface": "#1b1b23",
+            "surface-dim": "#dbd8e4",
+            "secondary-container": "#74e3fe",
+            "secondary": "#006879",
+            "on-primary-container": "#e6e4ff",
+            "surface-container-highest": "#e4e1ec",
+            "surface": "#fcf8ff",
+            "primary-fixed": "#e1dfff",
+            "on-surface-variant": "#464554",
+            "surface-tint": "#4c4bd2",
+            "surface-container": "#efecf8",
+            "on-tertiary-fixed": "#131f00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "stack_md": "16px",
+            "sidebar_width": "260px",
+            "stack_lg": "24px",
+            "stack_sm": "8px",
+            "container_padding": "32px"
+          },
+          "fontFamily": {
+            "label-caps": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "title-sm": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "display-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "title-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F4F4F6;
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #1b1b23;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .sidebar-active {
+      color: #3b39c2;
+      font-weight: 700;
+      border-right: 4px solid #3b39c2;
+      background-color: #f5f2fe;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid #5555DB;
+      outline-offset: -1px;
+      border-color: transparent !important;
+    }
+  </style>
+</head>
+
+<body class="flex">
+  <!-- SideNavBar -->
+  <nav
+    class="w-[260px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-stack_lg px-gutter z-20">
+    <div class="mb-stack_lg flex items-center gap-3 px-3">
+      <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+
+      </div>
+      <h1 class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap">Closed Account</h1>
+    </div>
+    <nav class="flex flex-col gap-2 mt-6">
+      <!-- Inactive Tab: Dashboard -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+        href="#">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="font-title-sm text-title-sm">Dashboard</span>
+      </a>
+      <!-- Inactive Tab: New Request -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+        href="#">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span class="font-title-sm text-title-sm">New Request</span>
+      </a>
+      <!-- Active Tab: Tasks -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 text-primary font-bold bg-primary-container/10"
+        href="#">
+        <span class="material-symbols-outlined">assignment</span>
+        <span class="font-title-sm text-title-sm">Tasks</span>
+      </a>
+      <!-- Inactive Tab: Tracking -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-on-surface-variant font-medium"
+        href="#">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="font-title-sm text-title-sm">Tracking</span>
+      </a>
+    </nav>
+  </nav>
+  <!-- Main Content Area -->
+  <main class="ml-[260px] w-[calc(100%-260px)] min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <header
+      class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+      <div class="flex items-center gap-4"><button
+          class="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container transition-colors active:scale-95 mr-4">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <span class="font-body-md">Back to Dashboard</span>
+        </button>
+        <div class="text-right flex flex-col justify-center">
+          <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+        </div>
+        <div
+          class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+          <span class="material-symbols-outlined text-outline">person</span>
+        </div>
+      </div>
+    </header>
+    <!-- Content Canvas -->
+    <div class="p-container_padding flex-1">
+      <!-- Page Header -->
+      <div class="flex items-center justify-between mb-stack_lg">
+        <div class="flex items-center gap-4">
+          <h2 class="font-headline-md text-headline-md text-on-surface">Other Asset Entry</h2>
+          <span
+            class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps text-label-caps rounded-full flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-on-tertiary-fixed-variant rounded-full animate-pulse"></span>
+            IN PROGRESS
+          </span>
+        </div>
+      </div>
+      <!-- Customer Context Card -->
+      <section
+        class="bg-surface-container-lowest p-stack_lg rounded-lg mb-gutter flex items-center justify-between border border-transparent">
+        <div class="grid grid-cols-2 gap-12">
+          <div>
+            <p class="text-on-surface-variant font-label-caps text-label-caps mb-1 uppercase">Customer UID</p>
+            <p class="font-title-sm text-on-surface">UID-849201</p>
+          </div>
+          <div>
+            <p class="text-on-surface-variant font-label-caps text-label-caps mb-1 uppercase">Customer Name</p>
+            <p class="font-title-sm text-on-surface">Kunakorn Yeamngam</p>
+          </div>
+        </div>
+        <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-[32px]">person</span>
+        </div>
+      </section>
+      <div class="space-y-gutter pb-32">
+        <!-- Cash Accounts Section -->
+        <section class="bg-surface-container-lowest rounded-lg border border-transparent overflow-hidden">
+          <div
+            class="px-stack_lg py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+            <h3 class="font-title-sm text-on-surface">Cash Accounts</h3>
+            <button class="flex items-center gap-1 text-primary font-label-caps text-label-caps hover:underline">
+              <span class="material-symbols-outlined text-[18px]">add</span>
+              ADD ROW
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr
+                  class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps border-b border-outline-variant">
+                  <th class="px-stack_lg py-3">Account Type</th>
+                  <th class="px-stack_lg py-3">Account Number</th>
+                  <th class="px-stack_lg py-3">Currency</th>
+                  <th class="px-stack_lg py-3">Balance</th>
+                  <th class="px-stack_lg py-3 w-10"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-outline-variant">
+                <tr>
+                  <td class="px-stack_lg py-3">
+                    <select class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3">
+                      <option>Savings</option>
+                      <option>Current</option>
+                      <option>Fixed Deposit</option>
+                    </select>
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <input class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3"
+                      type="text" value="098-2323-221">
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <select class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3">
+                      <option>THB</option>
+                      <option>USD</option>
+                      <option>EUR</option>
+                    </select>
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <input
+                      class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3 text-right"
+                      placeholder="0.00" type="number">
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <button class="text-on-surface-variant hover:text-error transition-colors">
+                      <span class="material-symbols-outlined">delete</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- Investment Portfolios Section -->
+        <section class="bg-surface-container-lowest rounded-lg border border-transparent overflow-hidden">
+          <div
+            class="px-stack_lg py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+            <h3 class="font-title-sm text-on-surface">Investment Portfolios</h3>
+            <button class="flex items-center gap-1 text-primary font-label-caps text-label-caps hover:underline">
+              <span class="material-symbols-outlined text-[18px]">add</span>
+              ADD ROW
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr
+                  class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps border-b border-outline-variant">
+                  <th class="px-stack_lg py-3">Fund Name</th>
+                  <th class="px-stack_lg py-3">Units</th>
+                  <th class="px-stack_lg py-3">Net Asset Value (NAV)</th>
+                  <th class="px-stack_lg py-3 w-10"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-outline-variant">
+                <tr>
+                  <td class="px-stack_lg py-3">
+                    <input class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3"
+                      placeholder="e.g. Global Tech Growth Fund" type="text">
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <input
+                      class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3 text-right"
+                      placeholder="0.0000" type="number">
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <input
+                      class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3 text-right"
+                      placeholder="0.00" type="number">
+                  </td>
+                  <td class="px-stack_lg py-3">
+                    <button class="text-on-surface-variant hover:text-error transition-colors">
+                      <span class="material-symbols-outlined">delete</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- Credit/SBL Section -->
+        <section class="bg-surface-container-lowest rounded-lg border border-transparent overflow-hidden">
+          <div class="px-stack_lg py-4 border-b border-outline-variant bg-surface-container-low">
+            <h3 class="font-title-sm text-on-surface">Credit / Security Backed Lending (SBL)</h3>
+          </div>
+          <div class="p-stack_lg grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-1">
+              <label class="text-on-surface-variant font-label-caps text-label-caps uppercase">Facility Type</label>
+              <select class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3">
+                <option>Term Loan</option>
+                <option>Overdraft</option>
+                <option>SBL Facility</option>
+              </select>
+            </div>
+            <div class="space-y-1">
+              <label class="text-on-surface-variant font-label-caps text-label-caps uppercase">Limit</label>
+              <input class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3 text-right"
+                placeholder="0.00" type="number">
+            </div>
+            <div class="space-y-1">
+              <label class="text-on-surface-variant font-label-caps text-label-caps uppercase">Outstanding
+                Balance</label>
+              <input class="w-full border-outline-variant rounded-lg font-body-md text-body-md py-2 px-3 text-right"
+                placeholder="0.00" type="number">
+            </div>
+          </div>
+        </section>
+        <!-- Audit Remarks Section -->
+        <section class="bg-surface-container-lowest p-stack_lg rounded-lg border border-transparent">
+          <div class="mb-4">
+            <h3 class="font-title-sm text-on-surface mb-1">Audit Remarks</h3>
+            <p class="text-on-surface-variant font-body-md text-body-md">Provide mandatory justifications for any
+              significant variations or manual entries.</p>
+          </div>
+          <textarea class="w-full border-outline-variant rounded-lg font-body-md text-body-md p-stack_md resize-none"
+            placeholder="Enter notes or justifications for entered balances..." rows="4"></textarea>
+        </section>
+      </div>
+    </div>
+    <!-- Action Bar -->
+    <footer
+      class="fixed bottom-0 right-0 w-[calc(100%-260px)] h-20 bg-surface border-t border-outline-variant flex items-center justify-end px-container_padding gap-gutter shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-40">
+      <button
+        class="px-6 py-stack_md border border-outline-variant text-on-surface-variant rounded-lg font-title-sm hover:bg-surface-container transition-colors">
+        Cancel
+      </button>
+      <button
+        class="px-8 py-stack_md bg-primary text-on-primary rounded-lg font-title-sm shadow-lg hover:bg-primary-container transition-all active:scale-95">
+        Submit Balances
+      </button>
+    </footer>
+  </main>
+  <script>
+    // Micro-interactions
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (el.tagName === 'A' && el.getAttribute('href') === '#') {
+          e.preventDefault();
+        }
+      });
+    });
+
+    // Numeric validation for balance inputs
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      input.addEventListener('input', (e) => {
+        if (e.target.value < 0) e.target.value = 0;
+      });
+    });
+  </script>
+  <script src="../scripts/auto-routing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,494 @@
+<!doctype html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Closed Account - Dashboard Overview</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts: Hanken Grotesk -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c1c1ff",
+                        "tertiary-container": "#53701c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e1ec",
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "surface-container": "#efecf8",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#322fb9",
+                        "inverse-surface": "#303038",
+                        "on-background": "#1b1b23",
+                        "on-surface-variant": "#464554",
+                        "secondary-fixed-dim": "#64d5ef",
+                        tertiary: "#3c5701",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "surface-container-highest": "#e4e1ec",
+                        outline: "#777586",
+                        "on-tertiary-fixed": "#131f00",
+                        "secondary-fixed": "#aaedff",
+                        "primary-container": "#5555db",
+                        error: "#ba1a1a",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#e6e4ff",
+                        secondary: "#006879",
+                        "surface-container-high": "#eae6f2",
+                        surface: "#fcf8ff",
+                        "on-surface": "#1b1b23",
+                        "surface-container-low": "#f5f2fe",
+                        "inverse-on-surface": "#f2effb",
+                        background: "#fcf8ff",
+                        "on-tertiary-container": "#cff38f",
+                        "tertiary-fixed": "#ccef8c",
+                        "on-secondary-container": "#006576",
+                        "primary-fixed": "#e1dfff",
+                        "outline-variant": "#c7c4d7",
+                        "surface-tint": "#4c4bd2",
+                        primary: "#3b39c2",
+                        "secondary-container": "#74e3fe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbd8e4",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c1c1ff",
+                        "on-primary-fixed": "#09006b",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed-dim": "#b0d272",
+                        "status-pending-text": "#006879",
+                        "status-pending-bg": "#aaedff",
+                        "status-completed-text": "#3c5701",
+                        "status-completed-bg": "#ccef8c",
+                        "status-rejected-text": "#ba1a1a",
+                        "status-rejected-bg": "#ffdad6",
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem",
+                    },
+                    spacing: {
+                        sidebar_width: "260px",
+                        stack_sm: "8px",
+                        stack_lg: "24px",
+                        container_padding: "32px",
+                        stack_md: "16px",
+                        gutter: "24px",
+                    },
+                    fontFamily: {
+                        "title-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                    },
+                    fontSize: {
+                        "title-sm": [
+                            "18px",
+                            {
+                                lineHeight: "1.4",
+                                fontWeight: "600",
+                            },
+                        ],
+                        "body-lg": [
+                            "16px",
+                            {
+                                lineHeight: "1.6",
+                                fontWeight: "400",
+                            },
+                        ],
+                        "label-caps": [
+                            "12px",
+                            {
+                                lineHeight: "1.2",
+                                letterSpacing: "0.05em",
+                                fontWeight: "700",
+                            },
+                        ],
+                        "body-md": [
+                            "14px",
+                            {
+                                lineHeight: "1.5",
+                                fontWeight: "400",
+                            },
+                        ],
+                        "display-lg": [
+                            "32px",
+                            {
+                                lineHeight: "1.2",
+                                fontWeight: "700",
+                            },
+                        ],
+                        "headline-md": [
+                            "24px",
+                            {
+                                lineHeight: "1.3",
+                                fontWeight: "600",
+                            },
+                        ],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #f4f4f6;
+        }
+    </style>
+</head>
+
+<body class="text-on-background font-body-md antialiased min-h-screen flex">
+    <!-- SideNavBar -->
+    <aside
+        class="dark:bg-surface-container-low w-sidebar_width h-screen fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col gap-stack_md p-stack_lg z-20 bg-white">
+        <!-- Brand Logo Area -->
+        <div class="mb-stack_lg">
+            <h1
+                class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim whitespace-nowrap px-4">
+                Closed Account
+            </h1>
+        </div>
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-2">
+            <!-- Active Tab: Dashboard -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/10 transition-colors"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="font-title-sm text-title-sm">Dashboard</span>
+            </a>
+            <!-- Inactive Tabs -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                <span class="font-title-sm text-title-sm">New Request</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+                <span class="font-title-sm text-title-sm">Tasks</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                <span class="font-title-sm text-title-sm">Tracking</span>
+            </a>
+        </nav>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+        class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+        <div class="flex items-center gap-4">
+            <button
+                class="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-medium">Back to Dashboard</span>
+            </button>
+            <div class="text-right flex flex-col justify-center">
+                <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+                <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+            </div>
+            <div
+                class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+                <span class="material-symbols-outlined text-outline">person</span>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-[260px] mt-16 p-container_padding w-full flex flex-col gap-stack_lg">
+        <!-- Page Header -->
+        <div class="flex justify-between items-center w-full">
+            <h2 class="font-headline-md text-headline-md text-on-background">
+                Dashboard
+            </h2>
+            <button
+                class="bg-primary-container text-white px-6 py-3 rounded-lg font-title-sm text-title-sm hover:opacity-90 transition-opacity flex items-center gap-2 h-12 shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+                + New Request
+            </button>
+        </div>
+        <!-- Summary Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full">
+            <!-- Pending Tasks Card -->
+            <div
+                class="bg-surface rounded-lg p-stack_lg flex flex-col gap-stack_sm shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30">
+                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+                    PENDING TASKS
+                </h3>
+                <span class="font-display-lg text-[48px] font-bold text-error leading-none">5</span>
+            </div>
+            <!-- Completed Tasks Card -->
+            <div
+                class="bg-surface rounded-lg p-stack_lg flex flex-col gap-stack_sm shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30">
+                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+                    COMPLETED TASKS
+                </h3>
+                <span class="font-display-lg text-[48px] font-bold text-tertiary-container leading-none">12</span>
+            </div>
+        </div>
+        <!-- Search Bar Container -->
+        <div
+            class="bg-surface rounded-lg p-stack_sm shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex items-center gap-4 w-full">
+            <div
+                class="flex-grow flex items-center bg-surface-container-low rounded border border-outline-variant/50 px-4 h-11 focus-within:border-primary transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant mr-3">search</span>
+                <input
+                    class="w-full bg-transparent border-none focus:ring-0 text-body-md placeholder:text-on-surface-variant/70 p-0 text-on-surface h-full outline-none"
+                    placeholder="Search Request ID or Customer Name..." type="text" />
+            </div>
+            <button
+                class="bg-primary-container text-white px-6 h-11 rounded font-title-sm text-title-sm hover:opacity-90 transition-opacity">
+                Search
+            </button>
+        </div>
+        <!-- Recent Requests Table Card -->
+        <div class="flex flex-wrap items-center gap-4 w-full mb-stack_md">
+            <div
+                class="flex-grow md:flex-1 flex items-center bg-white rounded border border-outline-variant/50 px-4 h-11 focus-within:border-primary transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+                <span class="material-symbols-outlined text-on-surface-variant mr-3">person_search</span>
+                <input
+                    class="w-full bg-transparent border-none focus:ring-0 text-body-md placeholder:text-on-surface-variant/70 p-0 text-on-surface h-full outline-none"
+                    placeholder="Filter by Customer Name..." type="text" />
+            </div>
+            <div
+                class="w-full md:w-64 flex items-center bg-white rounded border border-outline-variant/50 px-4 h-11 focus-within:border-primary transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+                <span class="material-symbols-outlined text-on-surface-variant mr-3">filter_list</span>
+                <select
+                    class="w-full bg-transparent border-none focus:ring-0 text-body-md text-on-surface h-full outline-none appearance-none">
+                    <option value="">All Statuses</option>
+                    <option value="pending_risk">Pending Risk</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending_operation">Pending Operation</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="pending_middle">Pending Middle</option>
+                </select>
+            </div>
+        </div>
+        <div
+            class="bg-surface rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30 w-full overflow-hidden flex flex-col">
+            <div class="px-stack_lg py-stack_md border-b border-outline-variant/50">
+                <h3 class="font-title-sm text-title-sm text-on-surface">
+                    Recent Requests
+                </h3>
+            </div>
+            <div class="overflow-x-auto w-full">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-outline-variant/50">
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase">
+                                Request ID
+                            </th>
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase">
+                                Customer Name
+                            </th>
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase">
+                                Date
+                            </th>
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase">
+                                Status
+                            </th>
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase text-center">
+                                Reject Count
+                            </th>
+                            <th
+                                class="px-stack_lg py-stack_sm font-label-caps text-label-caps text-on-surface-variant uppercase text-right">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/30">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-pending-bg text-status-pending-text">
+                                    Pending Risk
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                9
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-completed-bg text-status-completed-text">
+                                    Completed
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                48
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-pending-bg text-status-pending-text">
+                                    Pending Operation
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                37
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-rejected-bg text-status-rejected-text">
+                                    Rejected
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                23
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 5 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-pending-bg text-status-pending-text">
+                                    Pending Middle
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                12
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 6 -->
+                        <tr class="hover:bg-surface-container-lowest transition-colors">
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface font-medium">
+                                INVX888-1999
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                Kunakorn Yeamngam
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant">
+                                June 22, 2026
+                            </td>
+                            <td class="px-stack_lg py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-status-pending-bg text-status-pending-text">
+                                    Pending Middle
+                                </span>
+                            </td>
+                            <td class="px-stack_lg py-4 font-body-md text-on-surface-variant text-center">
+                                0
+                            </td>
+                            <td class="px-stack_lg py-4 text-right">
+                                <button
+                                    class="px-4 py-1 border border-outline-variant rounded text-on-surface-variant font-body-md text-sm hover:bg-surface-container-low transition-colors">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="./scripts/auto-routing.js"></script>
+</body>
+
+</html>

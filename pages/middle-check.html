@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Closed Account - Document Verification</title>
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <!-- Google Fonts: Hanken Grotesk -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c7c4d7",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e4e1ec",
+            "on-surface": "#1b1b23",
+            "tertiary-container": "#53701c",
+            "surface-container": "#efecf8",
+            "secondary-fixed": "#aaedff",
+            "primary-fixed": "#e1dfff",
+            "on-primary-fixed": "#09006b",
+            "surface-dim": "#dbd8e4",
+            "primary-container": "#5555db",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#fcf8ff",
+            "outline": "#777586",
+            "primary-fixed-dim": "#c1c1ff",
+            "on-secondary-fixed": "#001f26",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#322fb9",
+            "on-primary-container": "#e6e4ff",
+            "tertiary-fixed": "#ccef8c",
+            "surface-container-lowest": "#ffffff",
+            "background": "#fcf8ff",
+            "surface-container-low": "#f5f2fe",
+            "on-secondary": "#ffffff",
+            "secondary": "#006879",
+            "on-tertiary-container": "#cff38f",
+            "on-secondary-fixed-variant": "#004e5c",
+            "on-surface-variant": "#464554",
+            "inverse-primary": "#c1c1ff",
+            "primary": "#3b39c2",
+            "on-tertiary-fixed-variant": "#354e00",
+            "surface-container-high": "#eae6f2",
+            "surface-tint": "#4c4bd2",
+            "on-error": "#ffffff",
+            "on-background": "#1b1b23",
+            "tertiary": "#3c5701",
+            "on-tertiary-fixed": "#131f00",
+            "surface-variant": "#e4e1ec",
+            "error": "#ba1a1a",
+            "inverse-surface": "#303038",
+            "on-secondary-container": "#006576",
+            "inverse-on-surface": "#f2effb",
+            "secondary-fixed-dim": "#64d5ef",
+            "tertiary-fixed-dim": "#b0d272",
+            "secondary-container": "#74e3fe",
+            "surface-bright": "#fcf8ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "stack_lg": "24px",
+            "stack_md": "16px",
+            "stack_sm": "8px",
+            "sidebar_width": "260px",
+            "container_padding": "32px"
+          },
+          "fontFamily": {
+            "title-sm": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "label-caps": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "title-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "display-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#F4F4F6] text-on-background antialiased flex h-screen overflow-hidden">
+  <!-- Persistent SideNavBar -->
+  <nav
+    class="w-[260px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-stack_lg px-gutter z-20">
+    <div class="mb-stack_lg flex items-center gap-3 px-3">
+      <div class="w-8 h-8 bg-primary rounded flex items-center justify-center"></div>
+      <h1 class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap">Closed Account</h1>
+    </div>
+    <nav class="flex flex-col gap-2 mt-6">
+      <!-- Inactive Tab: Dashboard -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+        href="#">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="font-title-sm text-title-sm">Dashboard</span>
+      </a>
+      <!-- Inactive Tab: New Request -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+        href="#">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span class="font-title-sm text-title-sm">New Request</span>
+      </a>
+      <!-- Inactive Tab: Tasks -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 text-primary font-bold bg-primary-container/10"
+        href="#">
+        <span class="material-symbols-outlined">assignment</span>
+        <span class="font-title-sm text-title-sm">Tasks</span>
+      </a>
+      <!-- Active Tab: Tracking -->
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-on-surface-variant font-medium"
+        href="#">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="font-title-sm text-title-sm">Tracking</span>
+      </a>
+    </nav>
+  </nav>
+  <!-- Main Content Canvas -->
+  <div class="ml-[260px] flex-1 flex flex-col h-full relative">
+    <!-- TopNavBar -->
+    <header
+      class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+      <div class="flex items-center gap-4"><button
+          class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors active:scale-95 mr-auto">
+          <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+          <span class="font-body-md text-body-md font-medium">Back to Dashboard</span>
+        </button>
+        <div class="text-right flex flex-col justify-center">
+          <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+        </div>
+        <div
+          class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+          <span class="material-symbols-outlined text-outline">person</span>
+        </div>
+      </div>
+    </header>
+    <!-- Scrollable Canvas Area -->
+    <main class="flex-1 overflow-y-auto p-container_padding">
+      <!-- Breadcrumb / Context header -->
+      <div class="mb-stack_lg">
+        <div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md mb-2">
+          <a class="hover:text-primary transition-colors" href="#">Tasks</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <a class="hover:text-primary transition-colors" href="#">Pending Reviews</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <span class="text-on-surface font-semibold">Account #8492-B (Smith, J.)</span>
+        </div>
+        <h2 class="font-display-lg text-display-lg text-on-surface">Verification Review</h2>
+      </div>
+      <!-- Two Column Layout -->
+      <div class="grid grid-cols-12 gap-gutter">
+        <!-- Left Column: Document List (Spans 7 columns) -->
+        <div class="col-span-12 lg:col-span-7 flex flex-col gap-stack_md">
+          <div class="bg-surface rounded-lg p-stack_lg border border-outline-variant shadow-sm flex flex-col h-full">
+            <div class="flex justify-between items-center mb-stack_md border-b border-surface-variant pb-stack_sm">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Uploaded Documents</h3>
+              <span
+                class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-DEFAULT font-label-caps text-label-caps">3
+                Items</span>
+            </div>
+            <div class="flex flex-col gap-stack_sm overflow-y-auto pr-2">
+              <!-- Document Item 1 -->
+              <div
+                class="group flex items-center justify-between p-stack_md border border-outline-variant rounded-DEFAULT hover:border-primary transition-colors cursor-pointer bg-surface-container-lowest">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 bg-error-container text-on-error-container rounded-DEFAULT flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                  </div>
+                  <div>
+                    <h4 class="font-body-md text-body-md font-semibold text-on-surface">Government ID.pdf</h4>
+                    <p class="font-body-sm text-[12px] text-on-surface-variant">Uploaded 2 hrs ago • 1.2 MB</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-tertiary-container/20 text-tertiary px-2 py-1 rounded-DEFAULT font-label-caps text-label-caps flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                  <button
+                    class="p-2 text-on-surface-variant hover:text-primary rounded-DEFAULT hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Document Item 2 -->
+              <div
+                class="group flex items-center justify-between p-stack_md border border-primary rounded-DEFAULT bg-primary-fixed/10 transition-colors cursor-pointer">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 bg-error-container text-on-error-container rounded-DEFAULT flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                  </div>
+                  <div>
+                    <h4 class="font-body-md text-body-md font-semibold text-on-surface">Closure_Request_Signed.pdf</h4>
+                    <p class="font-body-sm text-[12px] text-on-surface-variant">Uploaded 2 hrs ago • 2.4 MB</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded-DEFAULT font-label-caps text-label-caps flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">pending</span> Pending
+                  </span>
+                  <button class="p-2 text-primary hover:bg-surface-container transition-colors rounded-DEFAULT">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Document Item 3 -->
+              <div
+                class="group flex items-center justify-between p-stack_md border border-outline-variant rounded-DEFAULT hover:border-primary transition-colors cursor-pointer bg-surface-container-lowest">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-DEFAULT flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined">image</span>
+                  </div>
+                  <div>
+                    <h4 class="font-body-md text-body-md font-semibold text-on-surface">Proof_of_Address.jpg</h4>
+                    <p class="font-body-sm text-[12px] text-on-surface-variant">Uploaded 3 hrs ago • 850 KB</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-tertiary-container/20 text-tertiary px-2 py-1 rounded-DEFAULT font-label-caps text-label-caps flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                  <button
+                    class="p-2 text-on-surface-variant hover:text-primary rounded-DEFAULT hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Preview Placeholder area (simulating looking at the active doc) -->
+            <div
+              class="mt-stack_lg bg-surface-container-lowest border border-outline-variant rounded-DEFAULT h-64 flex flex-col items-center justify-center text-on-surface-variant relative overflow-hidden">
+              <div class="absolute inset-0 bg-[url('placeholder')] opacity-20 bg-cover bg-center"
+                data-alt="A blurred, faded generic corporate form document with a prominent signature line at the bottom, realistic modern office lighting, light gray tones, professional document aesthetic."
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoFMA6e_I3DmoMyFQT0rx8jrNOFhgzolPL3L8XSsc3owvS8Z8OoHqHuT0kTbpmBSVfVPEZuacDgk6tkEHVUzXCTQ-5r1zwwdPu_WggHfEuirjimAGdTiHaY7wFV-DCQj-RAMtRiVih9jzl3mdtNzFk2vJDDoViutpUHCjVVt-E7fH8xqJ6qvvn3cig5qcj6PlZfhhAl3Wc8FazNMyr1WY0ylE6WsC3Jy-gWQBrIMO1Q_AT8Xf5oJfjoopO4-lqNpuby2MRFOwX')">
+              </div>
+              <span class="material-symbols-outlined text-[48px] mb-2 z-10">description</span>
+              <p class="font-body-md text-body-md z-10 bg-surface/80 px-4 py-1 rounded-full">Previewing:
+                Closure_Request_Signed.pdf</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Action Card & Panel (Spans 5 columns) -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col gap-stack_md">
+          <!-- Checklist Card -->
+          <div class="bg-surface rounded-lg p-stack_lg border border-outline-variant shadow-sm">
+            <div class="flex items-center gap-2 mb-stack_md border-b border-surface-variant pb-stack_sm">
+              <span class="material-symbols-outlined text-primary">fact_check</span>
+              <h3 class="font-title-sm text-title-sm text-on-surface">Verification Checklist</h3>
+            </div>
+            <div class="flex flex-col gap-4">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <div class="flex items-center h-6">
+                  <input checked=""
+                    class="w-5 h-5 rounded-DEFAULT border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface"
+                    type="checkbox">
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Document
+                    Completeness Verified</span>
+                  <span class="font-body-sm text-[12px] text-on-surface-variant">All required pages are present and
+                    legible.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <div class="flex items-center h-6">
+                  <input
+                    class="w-5 h-5 rounded-DEFAULT border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface"
+                    type="checkbox">
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Signatures
+                    Checked</span>
+                  <span class="font-body-sm text-[12px] text-on-surface-variant">Authorized signatures match
+                    records.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <div class="flex items-center h-6">
+                  <input checked=""
+                    class="w-5 h-5 rounded-DEFAULT border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface"
+                    type="checkbox">
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">ID
+                    Consistency Verified</span>
+                  <span class="font-body-sm text-[12px] text-on-surface-variant">Names and details match the account
+                    profile.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- Action Panel (Decision Form) -->
+          <div class="bg-surface rounded-lg p-stack_lg border border-outline-variant shadow-sm flex-1 flex flex-col">
+            <div class="flex items-center gap-2 mb-stack_md border-b border-surface-variant pb-stack_sm">
+              <span class="material-symbols-outlined text-on-surface-variant">rule</span>
+              <h3 class="font-title-sm text-title-sm text-on-surface">Review Decision</h3>
+            </div>
+            <form class="flex flex-col flex-1 h-full">
+              <!-- Radio Buttons -->
+              <div class="grid grid-cols-2 gap-4 mb-stack_md">
+                <label
+                  class="relative flex flex-col p-4 border border-outline-variant rounded-DEFAULT cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-body-md text-body-md font-semibold text-on-surface">Approve</span>
+                    <input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="decision"
+                      type="radio" value="approve">
+                  </div>
+                  <span class="font-body-sm text-[12px] text-on-surface-variant">Proceed to next stage</span>
+                </label>
+                <label
+                  class="relative flex flex-col p-4 border border-outline-variant rounded-DEFAULT cursor-pointer hover:border-error transition-colors has-[:checked]:border-error has-[:checked]:bg-error-container/20">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-body-md text-body-md font-semibold text-on-surface">Reject</span>
+                    <input class="w-4 h-4 text-error border-outline-variant focus:ring-error" name="decision"
+                      type="radio" value="reject">
+                  </div>
+                  <span class="font-body-sm text-[12px] text-on-surface-variant">Return to front office</span>
+                </label>
+              </div>
+              <!-- Comment Area -->
+              <div class="flex flex-col gap-2 mb-stack_lg flex-1">
+                <label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="comments">Reviewer
+                  Comments</label>
+                <textarea
+                  class="w-full border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary p-3 font-body-md text-body-md resize-none h-full"
+                  id="comments" placeholder="Enter reason for rejection or approval notes..." rows="4"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div class="mt-auto pt-stack_md border-t border-surface-variant flex justify-end gap-3"><button
+                  class="px-4 py-2 border border-outline-variant text-on-surface rounded-DEFAULT font-label-caps text-label-caps hover:bg-surface-container transition-colors h-10 flex items-center gap-2 shrink-0"
+                  type="button">
+                  <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                  View DA Assets
+                </button>
+
+                <button
+                  class="px-6 py-3 bg-primary text-on-primary rounded-DEFAULT font-body-md text-body-md font-semibold hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-2 h-[48px]"
+                  type="button">
+                  <span class="material-symbols-outlined text-[20px]">send</span> Submit Review
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../scripts/auto-routing.js"></script>
+</body>
+
+</html>

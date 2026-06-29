@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Create New Request - Closed Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c1c1ff",
+                        "tertiary-container": "#53701c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e1ec",
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "surface-container": "#efecf8",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#322fb9",
+                        "inverse-surface": "#303038",
+                        "on-background": "#1b1b23",
+                        "on-surface-variant": "#464554",
+                        "secondary-fixed-dim": "#64d5ef",
+                        tertiary: "#3c5701",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "surface-container-highest": "#e4e1ec",
+                        outline: "#777586",
+                        "on-tertiary-fixed": "#131f00",
+                        "secondary-fixed": "#aaedff",
+                        "primary-container": "#5555db",
+                        error: "#ba1a1a",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#e6e4ff",
+                        secondary: "#006879",
+                        "surface-container-high": "#eae6f2",
+                        surface: "#fcf8ff",
+                        "on-surface": "#1b1b23",
+                        "surface-container-low": "#f5f2fe",
+                        "inverse-on-surface": "#f2effb",
+                        background: "#fcf8ff",
+                        "on-tertiary-container": "#cff38f",
+                        "tertiary-fixed": "#ccef8c",
+                        "on-secondary-container": "#006576",
+                        "primary-fixed": "#e1dfff",
+                        "outline-variant": "#c7c4d7",
+                        "surface-tint": "#4c4bd2",
+                        primary: "#3b39c2",
+                        "secondary-container": "#74e3fe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbd8e4",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c1c1ff",
+                        "on-primary-fixed": "#09006b",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed-dim": "#b0d272",
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem",
+                    },
+                    spacing: {
+                        sidebar_width: "260px",
+                        stack_sm: "8px",
+                        stack_lg: "24px",
+                        container_padding: "32px",
+                        stack_md: "16px",
+                        gutter: "24px",
+                    },
+                    fontFamily: {
+                        "title-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                    },
+                    fontSize: {
+                        "title-sm": ["18px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "label-caps": [
+                            "12px",
+                            {
+                                lineHeight: "1.2",
+                                letterSpacing: "0.05em",
+                                fontWeight: "700",
+                            },
+                        ],
+                        "body-md": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "display-lg": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #f4f4f6;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-background antialiased flex">
+    <!-- SideNavBar -->
+    <aside
+        class="w-sidebar_width h-screen fixed left-0 top-0 dark:bg-surface-container-low border-r border-outline-variant dark:border-outline flex flex-col gap-stack_md p-stack_lg z-20 bg-surface-container-lowest bottom-0">
+        <div class="mb-stack_lg">
+            <h1
+                class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim whitespace-nowrap px-4">
+                Closed Account
+            </h1>
+        </div>
+        <nav class="flex flex-col gap-stack_sm flex-1">
+            <a class="flex items-center gap-stack_md px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors font-title-sm text-title-sm"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+            <a class="flex items-center gap-stack_md px-4 py-3 rounded-lg text-primary bg-primary-container/10 font-bold hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors font-title-sm text-title-sm"
+                href="#">
+                <span class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1">add_circle</span>
+                New Request
+            </a>
+            <a class="flex items-center gap-stack_md px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors font-title-sm text-title-sm"
+                href="#">
+                <span class="material-symbols-outlined">assignment</span>
+                Tasks
+            </a>
+            <a class="flex items-center gap-stack_md px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors font-title-sm text-title-sm"
+                href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                Tracking
+            </a>
+        </nav>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+        class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+        <div class="flex items-center gap-4">
+            <button type="button"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-medium text-body-md">Back to Dashboard</span>
+            </button>
+            <div class="text-right flex flex-col justify-center">
+                <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+                <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+            </div>
+            <div
+                class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+                <span class="material-symbols-outlined text-outline">person</span>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-[260px] pt-16 min-h-screen w-full flex-1 p-container_padding bg-surface-container-lowest">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-stack_lg mt-stack_lg">
+                <h2 class="font-display-lg text-display-lg text-on-surface font-bold">
+                    Create New Request
+                </h2>
+            </div>
+            <!-- Form Card -->
+            <div
+                class="bg-surface rounded-xl shadow-[0_2px_4px_rgba(0,0,0,0.05)] p-container_padding border border-outline-variant/30">
+                <form class="flex flex-col gap-stack_lg">
+                    <div class="bg-surface-container-low/30 p-4 rounded-lg border border-outline-variant/30 mb-2">
+                        <h3
+                            class="font-title-sm text-title-sm text-primary font-semibold mb-4 border-b border-primary/10 pb-2">
+                            Contact Evidence
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-stack_lg">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-label-caps text-on-surface-variant uppercase">Contact
+                                    Date/Time</label>
+                                <span class="font-body-lg text-on-surface font-medium">xx/xx/2569</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-label-caps text-on-surface-variant uppercase">Source Phone
+                                    Number</label>
+                                <span class="font-body-lg text-on-surface font-medium">029491999</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-label-caps text-on-surface-variant uppercase">Destination Phone
+                                    Number</label>
+                                <span class="font-body-lg text-on-surface font-medium">098XXX9662</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack_lg">
+                        <div class="flex flex-col gap-stack_sm">
+                            <label class="font-title-sm text-title-sm text-on-surface font-semibold"
+                                for="citizen_id">Citizen ID</label>
+                            <input
+                                class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md placeholder:text-on-surface-variant/50 transition-shadow"
+                                id="citizen_id" placeholder="Enter Citizen ID" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-stack_sm">
+                            <label class="font-title-sm text-title-sm text-on-surface font-semibold"
+                                for="customer_name">Customer Name</label>
+                            <input
+                                class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md placeholder:text-on-surface-variant/50 transition-shadow"
+                                id="customer_name" placeholder="Leo Messi" type="text" value="Leo Messi" />
+                        </div>
+                    </div>
+                    <div
+                        class="mb-4 flex items-center gap-2 p-3 bg-error-container text-on-error-container rounded-lg border border-error/20">
+                        <span class="material-symbols-outlined text-[20px]">error</span>
+                        <span class="text-body-md font-medium">Ineligible: Ongoing litigation with the company prevents
+                            account closure.</span>
+                    </div>
+                    <div class="flex gap-stack_sm mb-2 flex-row items-center gap-4">
+                        <label class="font-title-sm text-title-sm text-on-surface font-semibold">Is the account holder
+                            still alive?</label>
+                        <div class="flex items-center gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="is_alive"
+                                    class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                    checked="" /><span class="text-body-md text-primary">Yes</span></label><label
+                                class="flex items-center gap-2 cursor-pointer"><input type="radio" name="is_alive"
+                                    class="text-primary focus:ring-primary h-4 w-4 border-outline-variant" /><span
+                                    class="text-body-md">No</span></label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack_lg">
+                        <div class="flex flex-col gap-stack_md">
+                            <h3
+                                class="font-title-sm text-title-sm text-on-surface font-semibold border-b border-outline-variant pb-2">
+                                Account Type
+                            </h3>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Cash Account</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Cash Balance / Prepaid</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Fractional DR (DRx)</label>
+                                <div class="flex items-center gap-4">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input checked=""
+                                            class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="drx" type="radio" />
+                                        <span class="text-body-md text-primary">Yes</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="drx" type="radio" />
+                                        <span class="text-body-md">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <div></div>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Specify Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Credit Balance</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">SBL - Borrowing</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">SBL - Lending</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">SBL - Borrowing &amp; Lending</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="123123123" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-stack_md">
+                            <h3
+                                class="font-title-sm text-title-sm text-on-surface font-semibold border-b border-outline-variant pb-2">
+                                Account Type
+                            </h3>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Derivatives Account</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Offshore Account</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <div class="flex flex-col">
+                                    <label class="font-body-md text-on-surface">Global Trade (SAXO)</label>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input checked=""
+                                            class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="saxo" type="radio" />
+                                        <span class="text-body-md text-primary">Yes</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="saxo" type="radio" />
+                                        <span class="text-body-md">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <div class="flex flex-col">
+                                    <label class="font-body-md text-on-surface">GTN</label>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="gtn" type="radio" />
+                                        <span class="text-body-md">Yes</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input checked=""
+                                            class="text-primary focus:ring-primary h-4 w-4 border-outline-variant"
+                                            name="gtn" type="radio" />
+                                        <span class="text-body-md text-primary">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Mutual Fund</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">ROBO Account</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">LiVEx Account</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                            <div class="grid grid-cols-[1fr_1fr] gap-4 items-center">
+                                <label class="font-body-md text-on-surface">Others</label>
+                                <input
+                                    class="h-11 px-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-primary"
+                                    placeholder="Account Number" type="text" value="12312312313" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-error font-body-md">
+                            *** In case of closing a Securities Account that has SBL
+                            accounts under it, the SBL accounts must be closed along with
+                            the Securities Account.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-stack_md border-t border-outline-variant/30 pt-stack_lg">
+                        <label class="font-title-sm text-title-sm text-on-surface font-semibold mb-2">Reason for Closing
+                            Account</label>
+
+                        <div class="flex flex-col gap-4">
+                            <!-- Customer Request -->
+                            <div class="grid grid-cols-[1fr_auto] items-center border-b border-outline-variant/30 pb-3">
+                                <span class="text-body-md text-on-surface">Customer's request to close account:</span>
+                                <div class="flex items-center gap-2 text-primary font-medium cursor-pointer">
+                                    <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                                    <span class="text-body-md">Approved</span>
+                                </div>
+                            </div>
+
+                            <!-- Marketing Officer Opinion -->
+                            <div class="grid grid-cols-[1fr_auto] items-center border-b border-outline-variant/30 pb-3">
+                                <span class="text-body-md text-on-surface">Marketing Officer/Company's opinion to close
+                                    account:</span>
+                                <div class="flex items-center gap-2 text-primary font-medium cursor-pointer">
+                                    <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                                    <span class="text-body-md">Approved<br /></span>
+                                </div>
+                            </div>
+
+                            <!-- Others -->
+                            <div class="grid grid-cols-[1fr_auto] items-center pb-3">
+                                <span class="text-body-md text-on-surface">Others:</span>
+                                <button type="button" class="text-primary text-body-md font-medium hover:underline">
+                                    &lt;Pleasein&gt;
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Death Warning -->
+                        <div class="text-center mt-2">
+                            <p class="text-error font-body-md">
+                                *** กรณีลูกค้าถึงแก่กรรม
+                                ต้องได้รับอนุมัติจากผู้บริหารสูงสุดของสายงาน
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-stack_md border-t border-outline-variant/30 pt-stack_lg">
+                        <label class="font-title-sm text-title-sm text-on-surface font-semibold mb-2">Attach
+                            Documents</label>
+                        <div
+                            class="border-2 border-dashed border-outline-variant rounded-xl p-stack_lg flex flex-col items-center justify-center gap-2 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer">
+                            <span class="material-symbols-outlined text-primary text-[32px]">cloud_upload</span>
+                            <p class="text-body-md text-on-surface font-medium">
+                                Click or drag files to upload
+                            </p>
+                            <p class="text-body-md text-on-surface-variant">
+                                Support for PDF, JPG, PNG (Max 10MB)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-stack_md pt-stack_sm">
+                        <button
+                            class="flex-1 h-12 bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded-lg hover:bg-surface-variant transition-colors"
+                            type="button">
+                            Cancel</button><button
+                            class="flex-1 h-12 border border-primary text-primary font-title-sm text-title-sm rounded-lg hover:bg-primary-container/10 transition-colors"
+                            type="button">
+                            Edit
+                        </button>
+                        <button
+                            class="flex-1 h-12 bg-primary-container text-on-primary font-title-sm text-title-sm rounded-lg hover:bg-primary transition-colors shadow-sm"
+                            type="submit">
+                            Submit Request
+                        </button>
+                    </div>
+                    <div class="text-center mt-2">
+                        <p class="text-error font-body-md">
+                            *** ห้ามทำธุรกรรมซื้อเข้าบัญชีภายในระยะ 7
+                            วันหลังจากส่งคำขอปิดบัญชี จนกว่าการดำเนินการปิดบัญชีจะเสร็จสิ้น
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="../scripts/auto-routing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="width: 1280px; height: 1631px; overflow: hidden; position: relative;">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Other Asset Verification | Account Management</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Hanken Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "background": "#fcf8ff",
+                        "surface": "#fcf8ff",
+                        "secondary-fixed-dim": "#64d5ef",
+                        "primary-fixed": "#e1dfff",
+                        "outline-variant": "#c7c4d7",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#4c4bd2",
+                        "surface-dim": "#dbd8e4",
+                        "primary-container": "#5555db",
+                        "surface-bright": "#fcf8ff",
+                        "outline": "#777586",
+                        "primary": "#3b39c2",
+                        "on-primary-fixed-variant": "#322fb9",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1b1b23",
+                        "inverse-on-surface": "#f2effb",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eae6f2",
+                        "on-primary-fixed": "#09006b",
+                        "on-primary-container": "#e6e4ff",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-tertiary-fixed": "#131f00",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#b0d272",
+                        "tertiary-fixed": "#ccef8c",
+                        "secondary-container": "#74e3fe",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#cff38f",
+                        "surface-container-highest": "#e4e1ec",
+                        "surface-container-low": "#f5f2fe",
+                        "tertiary-container": "#53701c",
+                        "primary-fixed-dim": "#c1c1ff",
+                        "on-secondary-container": "#006576",
+                        "tertiary": "#3c5701",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006879",
+                        "surface-container": "#efecf8",
+                        "on-background": "#1b1b23",
+                        "on-secondary-fixed": "#001f26",
+                        "secondary-fixed": "#aaedff",
+                        "surface-variant": "#e4e1ec",
+                        "on-surface-variant": "#464554",
+                        "inverse-primary": "#c1c1ff",
+                        "inverse-surface": "#303038"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack_lg": "24px",
+                        "sidebar_width": "260px",
+                        "container_padding": "32px",
+                        "stack_sm": "8px",
+                        "stack_md": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "title-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "title-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #F4F4F6;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .sidebar-active {
+            background-color: rgba(85, 85, 219, 0.1);
+            color: #3b39c2;
+            font-weight: 700;
+        }
+
+        .table-row:hover {
+            background-color: #fcf8ff;
+        }
+    </style>
+</head>
+
+<body class="text-on-surface">
+    <!-- SIDEBAR (Fixed Left) -->
+    <nav
+        class="w-[260px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-stack_lg px-gutter z-20">
+        <div class="mb-stack_lg flex items-center gap-3 px-3">
+            <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+            </div>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap">Closed Account</h1>
+        </div>
+        <nav class="flex flex-col gap-2 mt-6">
+            <!-- Inactive Tab: Dashboard -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-title-sm text-title-sm">Dashboard</span>
+            </a>
+            <!-- Inactive Tab: New Request -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="#">
+                <span class="material-symbols-outlined">add_circle</span>
+                <span class="font-title-sm text-title-sm">New Request</span>
+            </a>
+            <!-- Active Tab: Tasks -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 text-primary font-bold bg-primary-container/10"
+                href="#">
+                <span class="material-symbols-outlined">assignment</span>
+                <span class="font-title-sm text-title-sm">Tasks</span>
+            </a>
+            <!-- Inactive Tab: Tracking -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-on-surface-variant font-medium"
+                href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                <span class="font-title-sm text-title-sm">Tracking</span>
+            </a>
+        </nav>
+    </nav>
+    <!-- HEADER (Fixed Top) -->
+    <header
+        class="dark:bg-surface-container-low h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant dark:border-outline flex justify-end items-center px-container_padding z-10 transition-all duration-200 bg-white">
+        <div class="flex items-center gap-4"><button
+                class="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-body-md">Back to Dashboard</span>
+            </button>
+            <div class="text-right flex flex-col justify-center"><span
+                    class="font-title-sm text-title-sm text-on-surface">Leo Messi</span><span
+                    class="font-body-md text-body-md text-on-surface-variant">Sale Support</span></div>
+            <div
+                class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+                <span class="material-symbols-outlined text-outline">person</span></div>
+        </div>
+    </header>
+    <!-- MAIN CONTENT CANVAS -->
+    <main class="ml-sidebar_width mt-16 p-container_padding min-h-screen">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-body-md">
+            <a class="hover:text-primary" href="#">Tasks</a>
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            <span class="text-on-surface font-semibold">Other Assets Check</span>
+        </nav>
+        <!-- Title Section -->
+        <div class="mb-stack_lg">
+            <h3 class="font-display-lg text-display-lg text-on-surface">Other Asset Verification</h3>
+            <p class="text-on-surface-variant font-body-lg">Search and verify non-digital asset holdings (Cash, Funds,
+                Equities)</p>
+        </div>
+        <div class="grid grid-cols-12 gap-gutter">
+            <!-- Search Section -->
+            <div class="col-span-12 lg:col-span-8">
+                <div class="bg-surface-container-lowest rounded-lg p-stack_lg border border-outline-variant shadow-sm">
+                    <h4 class="font-title-sm text-title-sm mb-stack_md text-on-surface">Search Criteria</h4>
+                    <div class="flex flex-col md:flex-row gap-4 items-end">
+                        <div class="flex-1 w-full">
+                            <label
+                                class="block text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase">Customer
+                                UID</label>
+                            <input
+                                class="w-full h-[44px] px-4 rounded border border-outline focus:ring-2 focus:ring-primary focus:border-primary bg-white"
+                                placeholder="Enter UID (e.g. CUST-98234)" type="text">
+                        </div>
+                        <button
+                            class="bg-primary-container text-white px-8 h-[48px] rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-all active:scale-95 shadow-md">
+                            <span class="material-symbols-outlined">search</span>
+                            Verify Assets
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Summary Card -->
+            <div class="col-span-12 lg:col-span-4">
+                <div
+                    class="bg-primary-container text-white rounded-lg p-stack_lg h-full border border-primary shadow-lg flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-[-20px] right-[-20px] opacity-10">
+                        <span class="material-symbols-outlined text-[120px]">account_balance_wallet</span>
+                    </div>
+                    <p class="text-on-primary-container font-label-caps uppercase tracking-widest mb-1">Total Verified
+                        Holdings</p>
+                    <h2 class="text-[40px] font-bold leading-tight">€1,482,900.00</h2>
+                    <p class="text-primary-fixed-dim text-body-md mt-2">Aggregated from 8 active portfolios</p>
+                </div>
+            </div>
+            <!-- Results Section -->
+            <div class="col-span-12 space-y-gutter">
+                <!-- Cash Accounts Table -->
+                <div
+                    class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm overflow-hidden">
+                    <div
+                        class="px-stack_lg py-stack_md border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">payments</span>
+                            <h4 class="font-title-sm text-title-sm">Cash Accounts</h4>
+                        </div>
+                        <button class="text-primary font-semibold text-body-md flex items-center gap-1 hover:underline">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Export
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left font-body-md">
+                            <thead>
+                                <tr
+                                    class="bg-surface-container-low text-on-surface-variant border-b border-outline-variant">
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Account Type</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Account Number</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Currency</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase text-right">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4">High-Yield Savings</td>
+                                    <td class="px-stack_lg py-4 font-mono text-on-surface-variant">DE89 **** 4421</td>
+                                    <td class="px-stack_lg py-4">EUR</td>
+                                    <td class="px-stack_lg py-4 text-right font-semibold">€245,000.00</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4">Operational Liquidity</td>
+                                    <td class="px-stack_lg py-4 font-mono text-on-surface-variant">LU12 **** 0098</td>
+                                    <td class="px-stack_lg py-4">USD</td>
+                                    <td class="px-stack_lg py-4 text-right font-semibold">$120,500.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Investment Portfolios Table -->
+                <div
+                    class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm overflow-hidden">
+                    <div
+                        class="px-stack_lg py-stack_md border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">monitoring</span>
+                            <h4 class="font-title-sm text-title-sm">Investment Portfolios</h4>
+                        </div>
+                        <button class="text-primary font-semibold text-body-md flex items-center gap-1 hover:underline">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Export
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left font-body-md">
+                            <thead>
+                                <tr
+                                    class="bg-surface-container-low text-on-surface-variant border-b border-outline-variant">
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Fund Name</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Units</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Net Asset Value</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase text-right">Total Value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4 font-semibold">Global Blue Chip Equity Fund</td>
+                                    <td class="px-stack_lg py-4">1,450.00</td>
+                                    <td class="px-stack_lg py-4 text-on-surface-variant">€412.50</td>
+                                    <td class="px-stack_lg py-4 text-right font-semibold">€598,125.00</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4 font-semibold">Sustainable Bond Alpha</td>
+                                    <td class="px-stack_lg py-4">2,300.00</td>
+                                    <td class="px-stack_lg py-4 text-on-surface-variant">€102.10</td>
+                                    <td class="px-stack_lg py-4 text-right font-semibold">€234,830.00</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4 font-semibold">EM Emerging Opportunities</td>
+                                    <td class="px-stack_lg py-4">890.00</td>
+                                    <td class="px-stack_lg py-4 text-on-surface-variant">€184.20</td>
+                                    <td class="px-stack_lg py-4 text-right font-semibold">€163,938.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Credit/SBL Table -->
+                <div
+                    class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm overflow-hidden">
+                    <div
+                        class="px-stack_lg py-stack_md border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">credit_score</span>
+                            <h4 class="font-title-sm text-title-sm">Credit/SBL (Security Backed Lending)</h4>
+                        </div>
+                        <button class="text-primary font-semibold text-body-md flex items-center gap-1 hover:underline">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Export
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left font-body-md">
+                            <thead>
+                                <tr
+                                    class="bg-surface-container-low text-on-surface-variant border-b border-outline-variant">
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Facility Type</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Limit</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase">Outstanding Balance</th>
+                                    <th class="px-stack_lg py-3 font-label-caps uppercase text-right">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4">Lombard Loan</td>
+                                    <td class="px-stack_lg py-4 font-semibold">€500,000.00</td>
+                                    <td class="px-stack_lg py-4 text-error">€120,400.00</td>
+                                    <td class="px-stack_lg py-4 text-right">
+                                        <span
+                                            class="bg-tertiary-fixed text-tertiary px-3 py-1 rounded-full font-label-caps text-[10px]">ACTIVE</span>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="px-stack_lg py-4">Revolving Credit Line</td>
+                                    <td class="px-stack_lg py-4 font-semibold">€250,000.00</td>
+                                    <td class="px-stack_lg py-4">€0.00</td>
+                                    <td class="px-stack_lg py-4 text-right">
+                                        <span
+                                            class="bg-tertiary-fixed text-tertiary px-3 py-1 rounded-full font-label-caps text-[10px]">ACTIVE</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Workflow Timeline (Subtle side hint for tasks) -->
+
+    </main>
+    <!-- Micro-interaction Scripts -->
+    <script>
+        // Simple search feedback
+        document.querySelector('button').addEventListener('click', function (e) {
+            const btn = e.currentTarget;
+            if (btn.innerText.includes('Verify')) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = `<span class="material-symbols-outlined animate-spin">sync</span> Searching...`;
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    alert('Data refreshed from core banking systems.');
+                }, 1500);
+            }
+        });
+
+        // Tab selection visual logic (standard sidebar behavior)
+        const navItems = document.querySelectorAll('aside nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => {
+                    i.classList.remove('sidebar-active');
+                    i.classList.add('text-on-surface-variant');
+                });
+                item.classList.add('sidebar-active');
+                item.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+    <script src="../scripts/auto-routing.js"></script>
+</body>
+
+</html>
