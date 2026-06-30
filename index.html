@@ -1,161 +1,18 @@
 <!doctype html>
-<html class="light" lang="en" style="">
+<html class="light" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Closed Account - Dashboard Overview</title>
     <!-- Material Symbols -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <!-- Google Fonts: Hanken Grotesk -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary-fixed-dim": "#c1c1ff",
-                        "tertiary-container": "#53701c",
-                        "on-error": "#ffffff",
-                        "surface-variant": "#e4e1ec",
-                        "on-tertiary-fixed-variant": "#354e00",
-                        "surface-container": "#efecf8",
-                        "on-error-container": "#93000a",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-fixed-variant": "#322fb9",
-                        "inverse-surface": "#303038",
-                        "on-background": "#1b1b23",
-                        "on-surface-variant": "#464554",
-                        "secondary-fixed-dim": "#64d5ef",
-                        tertiary: "#3c5701",
-                        "on-secondary-fixed-variant": "#004e5c",
-                        "surface-container-highest": "#e4e1ec",
-                        outline: "#777586",
-                        "on-tertiary-fixed": "#131f00",
-                        "secondary-fixed": "#aaedff",
-                        "primary-container": "#5555db",
-                        error: "#ba1a1a",
-                        "surface-bright": "#fcf8ff",
-                        "on-primary-container": "#e6e4ff",
-                        secondary: "#006879",
-                        "surface-container-high": "#eae6f2",
-                        surface: "#fcf8ff",
-                        "on-surface": "#1b1b23",
-                        "surface-container-low": "#f5f2fe",
-                        "inverse-on-surface": "#f2effb",
-                        background: "#fcf8ff",
-                        "on-tertiary-container": "#cff38f",
-                        "tertiary-fixed": "#ccef8c",
-                        "on-secondary-container": "#006576",
-                        "primary-fixed": "#e1dfff",
-                        "outline-variant": "#c7c4d7",
-                        "surface-tint": "#4c4bd2",
-                        primary: "#3b39c2",
-                        "secondary-container": "#74e3fe",
-                        "on-tertiary": "#ffffff",
-                        "on-primary": "#ffffff",
-                        "surface-dim": "#dbd8e4",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff",
-                        "inverse-primary": "#c1c1ff",
-                        "on-primary-fixed": "#09006b",
-                        "on-secondary-fixed": "#001f26",
-                        "tertiary-fixed-dim": "#b0d272",
-                        "status-pending-text": "#006879",
-                        "status-pending-bg": "#aaedff",
-                        "status-completed-text": "#3c5701",
-                        "status-completed-bg": "#ccef8c",
-                        "status-rejected-text": "#ba1a1a",
-                        "status-rejected-bg": "#ffdad6",
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.125rem",
-                        lg: "0.25rem",
-                        xl: "0.5rem",
-                        full: "0.75rem",
-                    },
-                    spacing: {
-                        sidebar_width: "260px",
-                        stack_sm: "8px",
-                        stack_lg: "24px",
-                        container_padding: "32px",
-                        stack_md: "16px",
-                        gutter: "24px",
-                    },
-                    fontFamily: {
-                        "title-sm": ["Hanken Grotesk"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "label-caps": ["Hanken Grotesk"],
-                        "body-md": ["Hanken Grotesk"],
-                        "display-lg": ["Hanken Grotesk"],
-                        "headline-md": ["Hanken Grotesk"],
-                    },
-                    fontSize: {
-                        "title-sm": [
-                            "18px",
-                            {
-                                lineHeight: "1.4",
-                                fontWeight: "600",
-                            },
-                        ],
-                        "body-lg": [
-                            "16px",
-                            {
-                                lineHeight: "1.6",
-                                fontWeight: "400",
-                            },
-                        ],
-                        "label-caps": [
-                            "12px",
-                            {
-                                lineHeight: "1.2",
-                                letterSpacing: "0.05em",
-                                fontWeight: "700",
-                            },
-                        ],
-                        "body-md": [
-                            "14px",
-                            {
-                                lineHeight: "1.5",
-                                fontWeight: "400",
-                            },
-                        ],
-                        "display-lg": [
-                            "32px",
-                            {
-                                lineHeight: "1.2",
-                                fontWeight: "700",
-                            },
-                        ],
-                        "headline-md": [
-                            "24px",
-                            {
-                                lineHeight: "1.3",
-                                fontWeight: "600",
-                            },
-                        ],
-                    },
-                },
-            },
-        };
-    </script>
-    <style>
-        body {
-            background-color: #f4f4f6;
-        }
-    </style>
+    <script src="assets/tailwind-config.js"></script>
+    <link href="assets/app.css" rel="stylesheet">
+    
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 
