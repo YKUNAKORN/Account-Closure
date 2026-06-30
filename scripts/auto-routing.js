@@ -21,35 +21,42 @@
     };
 
     const pageActions = {
+        'new-request.html': [
+            { match: 'submit request', target: routes.dashboard },
+            { match: 'cancel', target: routes.dashboard },
+        ],
         'insert-da.html': [
-            { match: 'submit balances', target: routes.checkDa },
+            { match: 'submit balances', target: routes.dashboard },
+            { match: 'cancel', target: routes.dashboard },
         ],
         'check-da.html': [
-            { match: 'search assets', target: routes.insertOther },
+            { match: 'check other asset', target: routes.checkOther },
         ],
         'insert-other.html': [
-            { match: 'submit balances', target: routes.checkOther },
+            { match: 'submit balances', target: routes.middleCheck },
+            { match: 'cancel', target: routes.dashboard },
         ],
         'check-other.html': [
-            { match: 'verify assets', target: routes.headOfSales },
+            { match: 'back', target: routes.checkDa },
         ],
         'head-of-sales.html': [
             {
-                match: 'submit ree',
+                match: 'submit review',
                 handle: function () {
                     routeByDecision({
-                        approve: routes.middleCheck,
+                        approve: routes.dashboard,
                         reject: routes.dashboard,
                     });
                 },
             },
         ],
         'middle-check.html': [
+            { match: 'view da assets', target: routes.checkDa },
             {
                 match: 'submit review',
                 handle: function () {
                     routeByDecision({
-                        approve: routes.operationCheck,
+                        approve: routes.dashboard,
                         reject: routes.dashboard,
                     });
                 },
@@ -60,33 +67,19 @@
                 match: 'submit decision',
                 handle: function () {
                     routeByDecision({
-                        approve: routes.settlementCheck,
+                        approve: routes.operationFinal,
                         reject: routes.dashboard,
                     });
                 },
             },
         ],
         'settlement-check.html': [
-            {
-                match: 'submit decision',
-                handle: function () {
-                    routeByDecision({
-                        approve: routes.cashManagementCheck,
-                        reject: routes.dashboard,
-                    });
-                },
-            },
+            { match: 'submit decision', target: routes.dashboard },
+            { match: 'cancel', target: routes.dashboard },
         ],
         'cash-management-check.html': [
-            {
-                match: 'submit execution',
-                handle: function () {
-                    routeByDecision({
-                        approve: routes.operationFinal,
-                        reject: routes.dashboard,
-                    });
-                },
-            },
+            { match: 'submit execution', target: routes.dashboard },
+            { match: 'cancel', target: routes.dashboard },
         ],
         'operation-final.html': [
             {
@@ -98,6 +91,9 @@
                     });
                 },
             },
+        ],
+        'view-detail.html': [
+            { match: 'back', target: routes.dashboard },
         ],
     };
 
@@ -176,7 +172,7 @@
     function matchRoute(label) {
         const text = normalizeText(label);
 
-        if (text.includes('dashboard') || text.includes('back to dashboard') || text === 'back' || (text.includes('arrow_back') && text.includes('back'))) {
+        if (text.includes('dashboard') || text.includes('back to dashboard')) {
             return routes.dashboard;
         }
 
