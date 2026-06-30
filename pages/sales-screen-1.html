@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Closed Account - Sales - Initial Customer Contact</title>
+    <!-- Google Fonts: Hanken Grotesk -->
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link href="../assets/app.css" rel="stylesheet">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <style>
+        .field {
+            height: 2.75rem;
+            border-radius: 0.25rem;
+            border: 1px solid rgba(199, 196, 215, 0.6);
+            background: #ffffff;
+            padding: 0 1rem;
+            color: #1b1b23;
+            outline: none;
+            transition: border-color .15s, box-shadow .15s;
+            width: 100%;
+        }
+        .field:focus {
+            border-color: #3b39c2;
+            box-shadow: 0 0 0 1px #3b39c2;
+        }
+        .seg {
+            display: flex;
+            border: 1px solid rgba(199, 196, 215, 0.6);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+        .seg input { display: none; }
+        .seg label {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 0;
+            font-size: 14px;
+            color: #464554;
+            cursor: pointer;
+            transition: background .15s, color .15s;
+        }
+        .seg input:checked + label {
+            background: #3b39c2;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .opt {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(199, 196, 215, 0.6);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background .15s, border-color .15s;
+        }
+        .opt:hover { background: #f5f2fe; }
+        .opt input { accent-color: #3b39c2; width: 1.05rem; height: 1.05rem; }
+    </style>
+</head>
+
+<body class="text-on-background font-body-md antialiased min-h-screen flex">
+    <!-- SideNavBar -->
+    <aside
+        class="w-sidebar_width h-screen fixed left-0 top-0 border-r border-outline-variant flex flex-col gap-stack_md p-stack_lg z-20 bg-white">
+        <div class="mb-stack_lg">
+            <h1 class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap px-4">
+                Closed Account
+            </h1>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="../index.html">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-title-sm text-title-sm">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold bg-primary-container/10 transition-colors"
+                href="sales-screen-1.html">
+                <span class="material-symbols-outlined">point_of_sale</span>
+                <span class="font-title-sm text-title-sm">Sales</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="insert-da.html">
+                <span class="material-symbols-outlined">account_balance_wallet</span>
+                <span class="font-title-sm text-title-sm">Digital Assets</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="insert-other.html">
+                <span class="material-symbols-outlined">account_tree</span>
+                <span class="font-title-sm text-title-sm">Middle</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="head-of-sales.html">
+                <span class="material-symbols-outlined">manage_accounts</span>
+                <span class="font-title-sm text-title-sm">Head of Sales</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="operation-check.html">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-title-sm text-title-sm">Operation</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="settlement-check.html">
+                <span class="material-symbols-outlined">handshake</span>
+                <span class="font-title-sm text-title-sm">Settlement</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="cash-management-check.html">
+                <span class="material-symbols-outlined">account_balance</span>
+                <span class="font-title-sm text-title-sm">Cash Management</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-95"
+                href="view-detail.html">
+                <span class="material-symbols-outlined">analytics</span>
+                <span class="font-title-sm text-title-sm">Tracking</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- TopAppBar -->
+    <header
+        class="h-16 fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant flex justify-between items-center px-container_padding z-10 bg-white">
+        <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+            <span class="font-title-sm text-title-sm text-on-surface">Sales</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+            <span class="font-body-md text-body-md">Initial customer contact</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-medium">Back to Dashboard</span>
+            </button>
+            <div class="text-right flex flex-col justify-center">
+                <span class="font-title-sm text-title-sm text-on-surface">Leo Messi</span>
+                <span class="font-body-md text-body-md text-on-surface-variant">Sale Support</span>
+            </div>
+            <div
+                class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+                <span class="material-symbols-outlined text-outline">person</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="ml-[260px] mt-16 p-container_padding w-full flex flex-col gap-stack_lg max-w-[1280px]">
+        <!-- Page Header -->
+        <div class="flex justify-between items-start w-full">
+            <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-3">
+                    <h2 class="font-headline-md text-headline-md text-on-background">Initial customer contact</h2>
+                    <span
+                        class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-pending-bg text-status-pending-text font-semibold text-xs">
+                        <span class="material-symbols-outlined text-[15px]">edit_note</span> Draft
+                    </span>
+                </div>
+                <span class="font-body-md text-body-md text-on-surface-variant">Stage 1 of 2 — บันทึกข้อมูลลูกค้าและบัญชีที่มีอยู่</span>
+            </div>
+        </div>
+
+        <!-- Trading-halt warning -->
+        <div class="flex items-center gap-3 bg-error-container text-on-error-container rounded-lg px-stack_lg py-stack_md border border-error/40">
+            <span class="material-symbols-outlined">block</span>
+            <span class="font-title-sm text-title-sm">ห้ามทำการซื้อขายจนกว่าจะดำเนินการปิดบัญชีเสร็จ</span>
+        </div>
+
+        <!-- Customer information -->
+        <section class="bg-surface rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col gap-stack_md w-full">
+            <h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">person</span> ข้อมูลลูกค้า
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Customer name</label>
+                    <input class="field" type="text" value="Kunakorn Yeamngam" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Customer card ID</label>
+                    <input class="field" type="text" value="UID-849201" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">เจ้าหน้าที่การตลาด / บริษัทมีความเห็นให้ปิดบัญชี</label>
+                    <input class="field" type="text" placeholder="ชื่อเจ้าหน้าที่หรือความเห็น" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">AO remark</label>
+                    <input class="field" type="text" placeholder="หมายเหตุจากเจ้าหน้าที่" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Closure reason -->
+        <section class="bg-surface rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col gap-stack_md w-full">
+            <h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">help</span> สาเหตุและความประสงค์การปิดบัญชี
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <div class="flex flex-col gap-3">
+                    <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">สาเหตุการปิดบัญชี</span>
+                    <label class="opt"><input type="checkbox" name="reason" /> <span class="text-body-md text-on-surface">เจ้าของบัญชีเสียชีวิต</span></label>
+                    <label class="opt"><input type="checkbox" name="reason" checked /> <span class="text-body-md text-on-surface">อื่นๆ โปรดระบุ</span></label>
+                    <input class="field" type="text" placeholder="โปรดระบุสาเหตุ" />
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">ลูกค้าแจ้งความประสงค์ขอปิดบัญชี</span>
+                    <label class="opt"><input type="checkbox" name="wish" /> <span class="text-body-md text-on-surface">เจ้าของบัญชีเสียชีวิต</span></label>
+                    <label class="opt"><input type="checkbox" name="wish" checked /> <span class="text-body-md text-on-surface">อื่นๆ โปรดระบุ</span></label>
+                    <input class="field" type="text" placeholder="โปรดระบุความประสงค์" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Accounts on file -->
+        <section class="bg-surface rounded-lg p-stack_lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col gap-stack_md w-full">
+            <div class="flex items-center justify-between">
+                <h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span> บัญชีที่มีอยู่ในระบบ
+                </h3>
+                <span class="font-body-md text-body-md text-on-surface-variant">ดึงข้อมูลจากระบบ SBL, SAXO, TFEX และอื่นๆ</span>
+            </div>
+            <div class="grid gap-gutter" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">savings</span> Equity + Bond + SN</h4>
+                    <input class="field" placeholder="Cash Account" value="0301-552113" />
+                    <input class="field" placeholder="Credit Balance" />
+                    <input class="field" placeholder="Cash Balance / Prepaid" />
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">sync_alt</span> SBL</h4>
+                    <input class="field" placeholder="SBL - Borrowing" />
+                    <input class="field" placeholder="SBL - Lending" />
+                    <input class="field" placeholder="SBL - Borrowing & Lending" />
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">pie_chart</span> บัญชีซื้อขายหน่วยลงทุน</h4>
+                    <input class="field" placeholder="Mutual Fund ACC" value="MF-77120" />
+                    <input class="field" placeholder="ROBO ACC" />
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">public</span> Offshore</h4>
+                    <input class="field" placeholder="Offshore ACC" />
+                    <div class="flex flex-col gap-2">
+                        <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Global Trade (SAXO)</span>
+                        <div class="seg">
+                            <input type="radio" id="saxo-y" name="saxo" /><label for="saxo-y">มี</label>
+                            <input type="radio" id="saxo-n" name="saxo" checked /><label for="saxo-n">ไม่มี</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">GTN</span>
+                        <div class="seg">
+                            <input type="radio" id="gtn-y" name="gtn" checked /><label for="gtn-y">มี</label>
+                            <input type="radio" id="gtn-n" name="gtn" /><label for="gtn-n">ไม่มี</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">candlestick_chart</span> TFEX</h4>
+                    <input class="field" placeholder="TFEX ACC" />
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">currency_bitcoin</span> Digital Assets (DA)</h4>
+                    <input class="field" placeholder="DA ACC" value="DA-001928" />
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">storefront</span> LiVEx</h4>
+                    <input class="field" placeholder="LiveX ACC" />
+                    <span class="font-body-md text-body-md text-on-surface-variant">บัญชีซื้อขายหลักทรัพย์ในตลาดไลฟ์เอ็กซ์เช้นจ์</span>
+                </div>
+
+                <div class="bg-surface-container-low rounded-lg p-stack_md border border-outline-variant/40 flex flex-col gap-3">
+                    <h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span> Algo</h4>
+                    <input class="field" placeholder="Algo ACC" />
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7-day note -->
+        <div class="flex items-start gap-3 bg-error-container/50 text-on-error-container rounded-lg px-stack_lg py-stack_md border border-error/30">
+            <span class="material-symbols-outlined text-error">schedule</span>
+            <p class="font-body-md text-body-md">ห้ามทำธุรกรรมซื้อเข้าบัญชีภายในระยะ 7 วันหลังจากส่งคำขอปิดบัญชี จนกว่าการดำเนินการปิดบัญชีจะเสร็จสิ้น</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex justify-end items-center gap-3 pb-stack_lg">
+            <button class="px-6 h-12 rounded-lg border border-outline-variant text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container-low transition-colors">
+                บันทึกร่าง
+            </button>
+            <button class="bg-primary text-on-primary px-8 h-12 rounded-lg font-title-sm text-title-sm hover:opacity-90 transition-opacity shadow-[0_2px_4px_rgba(0,0,0,0.08)] flex items-center gap-2">
+                <span class="material-symbols-outlined">send</span> ส่งคำขอปิดบัญชี
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>
